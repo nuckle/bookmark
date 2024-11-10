@@ -1,0 +1,66 @@
+// USER VARIABLES SECTION
+
+$accent: hsl(231, 69%, 60%) // Accent Color
+$black: #000 // Black Color
+$white: #fff // White Color
+$carnation: #FA5757 // Carnation Color
+$manatee: #9194A1 // Manatee Color
+$blue: #5368df // Blue Color
+$trout: #495057 // Trout Color
+$ebony-clay: #252B46 // Ebony Clayapprox
+$fontsize: 18px // Body Font Size
+$textcolor: #333 // Text Color
+$lineheight: 1.65 // Document Line Height
+$userfont: Rubik-Medium, sans-serif // User Font Family
+$systemfont: -apple-system, BlinkMacSystemFont, Arial, sans-serif // System Font Family
+
+// Bootstrap compatible gutter variable => $gutter
+$grid-gutter-width: 30px
+$gutter: $grid-gutter-width
+
+// IMPORT SECTION
+
+@import 'node_modules/bootstrap/scss/bootstrap-reboot.scss' // Bootstrap Reboot collection
+@import 'node_modules/bootstrap/scss/mixins/_breakpoints.scss' // Bootstrap Breakpoints mixin
+@import 'node_modules/swiper/swiper.less' // Swiper JS
+// @import 'node_modules/bootstrap/scss/bootstrap-grid.scss' // Optional Bootstrap Grid
+// @import 'node_modules/bootstrap/scss/utilities/_sizing.scss' // Optional Bootstrap Utilites
+
+// FONTS LOAD SECTION
+
+@mixin font($fname, $fstyle, $fweight, $furl)
+	@font-face
+		font-family: $fname
+		font-style: $fstyle
+		font-weight: $fweight
+		src: url($furl) format('woff2')
+
+
+@include font('rubik', normal, 400, '../fonts/Rubik-Regular.woff2')
+@include font('rubik', normal, 500, '../fonts/Rubik-Medium.woff2')
+
+// GENERAL DOCUMENT STYLES
+*:focus
+    outline: none
+
+::placeholder
+	color: #666
+
+::selection
+	background-color: $accent
+	color: #fff
+
+input, textarea
+	&:focus:required:invalid
+		border-color: red
+	&:required:valid
+		border-color: green
+
+body
+	font-family: $userfont
+	font-size: $fontsize
+	line-height: $lineheight
+	color: $textcolor
+	min-width: 320px
+	position: relative
+	overflow-x: hidden

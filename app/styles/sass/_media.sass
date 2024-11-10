@@ -1,0 +1,314 @@
+
+
+@media (min-width: 1200px)
+	.container
+		max-width: 1140px
+
+
+
+@media (min-width: 768px)
+	.overlay
+
+		&__container
+			display: flex
+			align-items: center
+			justify-content: space-between
+
+
+
+@media (max-width: 992px)
+	.container
+		max-width: 960px
+
+	.hero
+
+		&__container
+			overflow: hidden
+
+
+	.download
+
+		&__btn
+			padding: 11px 5px
+
+
+
+@media (max-width: 768px)
+	.container
+		max-width: 720px
+
+
+	.no-scroll
+		height: 100%
+		overflow: hidden
+
+
+	.overlay
+
+		&__menu
+			display: flex
+			align-items: center
+			justify-content: space-between
+
+		&--active
+			position: fixed
+			top: 0
+			right: 0
+			width: 100%
+			height: 100%
+			background-color: rgba(36, 43, 70, .9)
+			z-index: 3
+			overflow-y: auto
+
+			.overlay__container
+				display: block
+				max-width: 720px
+				margin: 0 auto
+				padding: 25px 15px
+
+
+
+	.header
+
+		&__container
+			height: 79px
+
+		&__nav
+			display: none
+
+		&__logo
+
+			&--active
+
+				.logo__title
+					fill: $white
+
+				.logo__circle
+					fill: $white
+
+				.logo__emblem
+					fill: rgba(36, 43, 70, .9)
+
+
+	.burger
+		display: block
+
+
+	.nav
+
+		&--mobile
+			display: block
+			margin-top: 40px
+
+		&__list
+			flex-direction: column
+			text-align: center
+
+		&__btn
+			width: 100%
+			padding: 4px 0
+			border: 2px solid $white
+			border-radius: 5px
+			background: 0 0
+			color: $white
+
+			&:hover,
+			&:focus
+				background: $white
+				color: $black
+
+		&__item
+			display: none
+
+			&:not(:last-child)
+				margin-right: auto
+
+
+			&--mobile
+				display: block
+				width: 100%
+				margin: 0 auto
+				padding: 15px 0
+				border-top: 1px solid $manatee
+
+			&--social
+				display: flex
+				align-items: center
+				justify-content: center
+				margin-top: 85px
+				border: 0
+
+		&__link
+			color: $white
+
+			&--social
+				display: block
+				background-repeat: no-repeat
+				background-position: center
+				background-size: cover
+				line-height: 21px
+
+			&--fb
+				width: 24px
+				height: 24px
+				margin-right: 10px
+				background-image: url('../images/dist/icon-facebook.svg')
+
+			&--tw
+				width: 24px
+				height: 20px
+				margin-left: 10px
+				background-image: url('../images/dist/icon-twitter.svg')
+
+
+	.hero
+
+		&__row
+			flex-direction: column-reverse
+
+		&__right,
+		&__left
+			flex: 0 0 100%
+			max-width: 100%
+
+		&__img
+
+			&::before
+				top: 18%
+				height: 88%
+
+		&__title
+			max-width: 100%
+			padding-top: 65px
+			text-align: center
+
+		&__desc
+			margin: 0 auto
+			text-align: center
+
+		&__btn-wrapper
+			display: flex
+			justify-content: center
+
+
+	.features
+
+		&__desc
+			width: 85%
+
+
+	.slider
+
+		&__pagination
+			flex-direction: column
+
+		&__bullet
+			width: 100%
+			max-width: 100%
+			border-top: 1px solid $manatee
+			color: $manatee
+			text-align: center
+
+			&::after
+				display: none
+
+			&:last-child
+				border-bottom: 1px solid $manatee
+
+			&:hover
+				color: $black
+
+			&--current
+				color: $black
+
+				&::after
+					display: inherit
+					width: 45%
+					margin: 0 auto
+
+
+	.slide
+		flex-direction: column
+
+		&__text
+			padding-left: 0
+
+		&__title
+			text-align: center
+
+		&__desc
+			text-align: center
+
+		&__btn
+			margin: 0 auto
+
+
+	.download
+
+		&__desc
+			width: 85%
+
+		&__row
+			flex-direction: column
+
+		&__card
+			margin: 0
+			margin-bottom: 45px
+
+			&:nth-of-type(2),
+			&:nth-of-type(3)
+				margin-top: initial
+
+
+	.questions
+
+		&__container
+			max-width: fit-content
+
+
+	.contact
+
+		&__form
+			width: 100%
+			grid-template-columns: none
+
+	.input__wrapper--error
+		margin-bottom: 30px
+
+
+	.footer
+		padding-bottom: 0
+
+		&__nav
+			flex-direction: column
+
+		&__item
+			margin-bottom: 35px
+
+			&:not(:last-child)
+				margin-right: 0
+
+		&__list
+			justify-content: center
+
+			&--group
+				flex-direction: column
+
+
+
+@media (max-width: 576px)
+	.container
+		max-width: 540px
+
+
+	.hero
+
+		&__btn
+			padding: 14px 12px
+			font-size: 14px
+
+
+	.questions
+
+		&__container
+			max-width: fit-content

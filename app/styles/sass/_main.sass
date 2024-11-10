@@ -1,0 +1,725 @@
+@import config
+@import media
+
+
+.grecaptcha-badge
+	visibility: hidden
+
+
+.preloader
+	position: fixed
+	top: 0
+	right: 0
+	bottom: 0
+	left: 0
+	width: 100%
+	height: 100%
+	transition: display 5s linear, opacity 5s linear
+	background: none repeat scroll 0 0 $white
+	z-index: 100
+
+	&--hidden
+		display: none
+		opacity: 0
+
+
+	&__inner
+		position: absolute
+		top: 50%
+		left: 50%
+		width: 60px
+		height: 60px
+		margin-top: -30px
+		margin-left: -30px
+		background-color: $white
+		background-image: url('../images/dist/preloader.gif')
+		background-repeat: no-repeat
+		background-position: center center
+		background-size: cover
+
+
+
+
+.arrow
+	display: block
+	position: fixed
+	right: -100px
+	bottom: -100px
+	width: 50px
+	height: 50px
+	transition: .25s background ease, .25s right ease, .25s bottom ease, .25s opacity ease
+	border-radius: 10em
+	background: $blue
+	color: $white
+	line-height: 45px
+	text-align: center
+	cursor: pointer
+	opacity: .4
+	z-index: 99
+
+	&__svg
+		width: .625em
+		height: 1em
+		font-size: 25px
+
+	&--active
+		right: 25px
+		bottom: 25px
+
+	&:hover,
+	&:active,
+	&:focus
+		background: $ebony-clay
+		color: $white
+		opacity: 1
+
+
+.container
+	width: 100%
+	margin: 0 auto
+	padding: 0 15px
+
+
+.ul
+	margin: 0
+	padding: 0
+	list-style-type: none
+
+
+@keyframes sweep
+	0%
+		transform: translateY(-10px)
+		opacity: 0
+
+	100%
+		transform: translateY(0)
+		opacity: 1
+
+
+.burger
+	display: none
+	position: relative
+	width: 24px
+	height: 20px
+	margin: 0
+	padding: 0
+	border: 0
+	background-color: transparent
+	cursor: pointer
+
+	&__line
+		display: inline-block
+		position: absolute
+		top: 50%
+		left: 0
+		width: 100%
+		height: 4px
+		transform: translateY(-50%)
+		transition: transform .5s cubic-bezier(.75, .2, .05, 1), background .5s cubic-bezier(.75, .2, .05, 1), opacity .55s ease
+		background-color: $black
+		opacity: 1
+
+	&::before,
+	&::after
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: 4px
+		transition: transform .5s cubic-bezier(.75, .2, .05, 1), background .5s cubic-bezier(.75, .2, .05, 1), opacity .55s ease
+		background-color: $black
+		content: ''
+
+	&::after
+		top: auto
+		bottom: 0
+
+
+.burger--active
+	width: 24px
+
+	.burger
+
+		&__line
+			transform: rotate(45deg)
+			background-color: transparent
+			opacity: 0
+
+	&::before,
+	&::after
+		left: 50%
+		width: 4px
+		height: 100%
+		background-color: $white
+
+	&::before
+		transform: rotate(45deg)
+
+	&::after
+		transform: rotate(-45deg)
+
+
+.logo
+
+	&:focus
+		outline: 1px solid $carnation
+
+
+.header
+
+	&__container
+		position: relative
+		padding-top: 25px
+		padding-bottom: 25px
+
+
+.nav
+
+	&__list
+		display: flex
+		align-items: center
+
+	&__item
+		letter-spacing: 1px
+		margin-right: 32px
+
+		&--hidden
+			display: none
+
+		&--btn
+			margin-right: 0
+
+	&__link
+		transition: color .25s ease
+		color: $black
+		text-transform: uppercase
+
+		&:hover,
+		&:focus
+			color: $carnation
+			text-decoration: none
+
+		&--social
+			display: block
+			transition: .25s opacity ease
+			background-repeat: no-repeat
+			background-position: center
+			background-size: cover
+			line-height: 21px
+
+			&:hover,
+			&:focus
+				opacity: .75
+
+		&--fb
+			width: 24px
+			height: 24px
+			margin-right: 10px
+			background-image: url('../images/dist/icon-facebook.svg')
+
+		&--tw
+			width: 24px
+			height: 20px
+			margin-left: 10px
+			background-image: url('../images/dist/icon-twitter.svg')
+
+		&--white
+			color: $white
+
+	&__btn
+		padding: 7px 32px
+		transition: color .25s ease, background .25s ease
+		border: 3px solid $carnation
+		border-radius: 8px
+		background: $carnation
+		color: $white
+		letter-spacing: 1px
+		text-align: center
+		text-transform: uppercase
+		box-shadow: 0 4px 12px rgba(0, 0, 0, .2)
+
+		&:hover,
+		&:focus
+			background: $white
+			color: $carnation
+
+
+.hero
+	padding-top: 100px
+
+	&__container
+		padding-bottom: 50px
+
+	&__row
+		display: flex
+		align-items: center
+		justify-content: space-between
+		width: 100%
+
+	&__right,
+	&__left
+		position: relative
+		flex: 0 0 50%
+		max-width: 50%
+
+	&__img
+
+		&::before
+			position: absolute
+			top: 30%
+			right: -30%
+			width: 100%
+			height: 76%
+			border-radius: 35% 0 0 35%
+			background-color: $blue
+			content: ''
+			z-index: -1
+
+		img
+			max-width: 100%
+
+	&__title
+		max-width: 70%
+		font-size: 36px
+		line-height: 40px
+
+	&__desc
+		width: 90%
+		padding-top: 15px
+		color: $manatee
+
+	&__btn
+		display: inline-block
+		max-width: 180px
+		margin-top: 15px
+		margin-right: 20px
+		padding: 14px 18px
+		transition: color .25s ease, background .25s ease, border .25s ease
+		border-radius: 6px
+		text-align: center
+		box-shadow: 0 4px 12px rgba(0, 0, 0, .2)
+
+		&:nth-of-type(0)
+			margin-right: 0
+
+		&--blue
+			border: 3px solid $blue
+			background: $blue
+			color: $white
+
+			&:hover,
+			&:focus
+				background: $white
+				color: $blue
+				text-decoration: none
+
+		&--white
+			border: 3px solid $white
+			background: $white
+			color: $black
+
+			&:hover,
+			&:focus
+				border: 3px solid $black
+				color: $black
+				text-decoration: none
+
+		&-wrapper
+			display: flex
+
+
+.features
+	padding-top: 100px
+	padding-bottom: 70px
+
+	&__title
+		margin-bottom: 20px
+		text-align: center
+
+	&__desc
+		width: 48%
+		margin: 0 auto
+		margin-bottom: 40px
+		color: $manatee
+		text-align: center
+
+
+.slider
+	width: 100%
+	overflow: hidden
+
+	&__wrapper
+		display: flex
+		width: 100%
+		height: 100%
+
+	&__pagination
+		display: flex
+		align-items: end
+		justify-content: center
+		margin-bottom: 60px
+
+	&__bullet
+		position: relative
+		max-width: 265px
+		padding: 15px 45px
+		transition: color .25s ease
+		color: $black
+		cursor: pointer
+
+		&::after
+			position: absolute
+			right: 0
+			bottom: 0
+			left: 0
+			height: 1px
+			background-color: $manatee
+			content: ''
+
+		&:hover,
+		&:focus
+			color: $carnation
+			text-decoration: none
+
+		&--current
+
+			&::after
+				height: 3px
+				background-color: $carnation
+
+
+.slide
+	display: flex
+	flex-direction: row
+	flex-shrink: 0
+	width: 100%
+
+
+	&__img,
+	&__text
+		display: flex
+		flex: 1
+		flex-basis: 100%
+		flex-direction: column
+
+	&__img
+
+		img
+			max-width: 100%
+
+	&__text
+		padding-top: 50px
+		padding-left: 60px
+
+	&__title
+		font-size: 24px
+
+	&__desc
+		max-width: 440px
+		padding-bottom: 20px
+		color: $manatee
+
+	&__btn
+		display: block
+		width: fit-content
+		padding: 11px 20px
+		transition: color .25s ease, background .25s ease
+		border: 3px solid $blue
+		border-radius: 6px
+		background: $blue
+		color: $white
+		visibility: hidden
+
+		&:hover,
+		&:focus
+			background-color: $white
+			color: $blue
+			text-decoration: none
+
+
+	&--active
+
+		.slide__btn
+			visibility: visible
+
+
+.download
+
+	&__container
+		padding-top: 60px
+		padding-bottom: 60px
+
+	&__title
+		margin-bottom: 20px
+		text-align: center
+
+	&__desc
+		width: 48%
+		margin: 0 auto
+		color: $manatee
+		text-align: center
+
+	&__row
+		display: flex
+		justify-content: center
+		padding: 60px 0
+
+	&__card
+		width: 100%
+		height: fit-content
+		margin: 0 30px
+		padding-top: 55px
+		padding-bottom: 30px
+		transition: transform .25s ease
+		border-radius: 10px
+		background: url('../images/dist/bg-dots.svg') no-repeat 0 290px
+		background-size: contain
+		text-align: center
+		box-shadow: 0 10px 20px rgba(36, 43, 70, .1)
+
+		&:nth-of-type(2)
+			margin-top: 30px
+
+		&:nth-of-type(3)
+			margin-top: 60px
+
+		&:hover,
+		&:focus
+			transform: scale(1.05)
+
+		&:first-child
+			margin-left: 0
+
+		&:last-child
+			margin-right: 0
+
+	&__img
+		padding: 15px 0
+
+	&__subtitle
+		padding-top: 10px
+
+	&__version
+		margin-bottom: 45px
+		color: $manatee
+		font-size: 15px
+
+	&__btn
+		max-width: 240px
+		padding: 11px 18px
+		transition: color .25s ease, background .25s ease
+		border: 3px solid $blue
+		border-radius: 6px
+		background: $blue
+		color: $white
+
+		&:hover,
+		&:focus
+			background: $white
+			color: $blue
+
+
+.questions
+
+	&__container
+		width: 570px
+		padding-top: 50px
+		padding-bottom: 120px
+
+	&__title
+		margin-bottom: 20px
+		text-align: center
+
+	&__desc
+		margin-bottom: 40px
+		color: $manatee
+		text-align: center
+
+	&__btn
+		display: block
+		width: fit-content
+		margin: 0 auto
+		padding: 11px 20px
+		transition: color .25s ease, background .25s ease
+		border: 3px solid $blue
+		border-radius: 6px
+		background: $blue
+		color: $white
+
+		&:hover,
+		&:focus
+			background: $white
+			color: $blue
+			text-decoration: none
+
+
+.accordion
+	border-bottom: 1px solid $manatee
+
+	&:last-of-type
+		margin-bottom: 40px
+
+	&[open]
+
+		.accordion__content
+			animation: sweep .5s ease-in-out
+
+		.accordion__control
+
+			&::before
+				transform: translate3d(-50%, -25%, 0) rotate(-45deg)
+				border-top: 3px solid $carnation
+				border-right: 3px solid $carnation
+
+	&:first-of-type
+		border-top: 1px solid $manatee
+
+	&__control
+		display: flex
+		position: relative
+		align-items: center
+		justify-content: space-between
+		padding: 18px 35px 10px 0
+		transition: color .25s ease
+		list-style: none
+
+		&:hover,
+		&:focus
+			color: $carnation
+
+		&::before
+			position: absolute
+			top: 50%
+			right: 10px
+			width: 10px
+			height: 10px
+			transform: translate3d(-50%, -75%, 0) rotate(135deg)
+			transition: transform .25s linear, border .25s linear
+			border-top: 3px solid $blue
+			border-right: 3px solid $blue
+			background: $white
+			content: ''
+			box-sizing: border-box
+
+		&::marker
+			display: none
+
+		&::-webkit-details-marker
+			display: none
+
+	&__title
+		margin: 0
+
+	&__content
+		color: $manatee
+
+
+.contact
+	background: $blue
+	color: $white
+
+	&__container
+		padding-top: 54px
+		padding-bottom: 54px
+
+	&__info
+		display: block
+		margin-bottom: 30px
+		font-size: 16px
+		letter-spacing: 2px
+		text-align: center
+		text-transform: uppercase
+
+	&__title
+		max-width: 400px
+		margin: 0 auto
+		margin-bottom: 25px
+		line-height: 38px
+		text-align: center
+
+	&__form
+		display: grid
+		width: 520px + 10px
+		margin: 0 auto
+		grid-template-columns: 65% 32%
+		grid-gap: 10px
+
+	&__input
+		position: relative
+		width: 100%
+		padding: .5rem 12% .5rem 1rem
+		transition: border .25s ease
+		border: 3px solid $white
+		border-radius: .3rem
+		color: $trout
+
+		&:focus,
+		&:active
+			border-color: $ebony-clay
+
+	&__label
+		position: absolute
+		bottom: -32px
+		left: 0
+		width: 100%
+		padding-left: 10px
+		border-bottom-left-radius: 5px
+		border-bottom-right-radius: 5px
+		background: $carnation
+		font-size: 16px
+		font-style: italic
+
+		&--hidden
+			display: none
+
+	&__btn
+		width: auto
+		padding: .5rem 1rem
+		transition: background .25s ease, color .25s ease
+		border: 3px solid $carnation
+		border-radius: .3rem
+		background: $carnation
+		color: $white
+
+		&:hover,
+		&:focus
+			background: $white
+			color: $carnation
+
+
+.js-validate-error-label
+	display: none
+
+
+.js-validate-error-field
+	border: 3px solid $carnation
+	border-bottom-left-radius: 0
+	border-bottom-right-radius: 0
+	background-image: url('../images/dist/icon-error.svg')
+	background-repeat: no-repeat
+	background-position: right 5% center
+
+
+.input__wrapper
+	position: relative
+
+
+.footer
+	padding-top: 35px
+	padding-bottom: 35px
+	background: $ebony-clay
+
+	&__nav
+		display: flex
+		justify-content: space-between
+
+	&__item
+
+		&:not(:last-child)
+			margin-right: 30px
+
+	&__list
+		display: flex
+		flex-direction: row
+		align-items: center
+		line-height: 20px
