@@ -11,7 +11,7 @@ pages:
       - node_modules/
   script:
     - npm install --omit=dev
-    - gulp build
+    - npx gulp build
     - cp -a dist/. public/
   artifacts:
     paths:
