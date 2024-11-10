@@ -14,7 +14,6 @@ npx gulp
 ## How to build 
 
 ```sh
-npm i 
 npx gulp build 
 ```
 
