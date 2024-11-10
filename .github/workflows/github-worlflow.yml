@@ -42,7 +42,7 @@ jobs:
       - name: Build
         env:
           repo: ${{ github.event.repository.name }}
-        run: npx run gulp build
+        run: npx gulp build
       - name: Check if dist exists
         run: test -d ./dist && echo "Directory exists" || echo "Directory does not exist"
       - name: Setup Pages
