@@ -1,6 +1,9 @@
 # Bookmark
 
-![preview](img/preview.png)
+<details>
+  <summary>Preview</summary>
+  <img src="img/preview.png" alt="preview">
+</details>
 
 [Live demo (gitlab)](https://w973.gitlab.io/bookmark)
 
