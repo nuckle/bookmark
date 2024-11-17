@@ -9,6 +9,22 @@
 
 [Live demo (github)](https://nuckle.github.io/bookmark)
 
+## Installation
+
+Close this repository like this if you need PHPMailer submodule
+
+```sh
+git clone --recursive https://github.com/nuckle/bookmark.git
+```
+
+Or you can use this 
+
+```sh
+git clone https://github.com/nuckle/bookmark.git
+cd bookmark/
+git submodule update
+```
+
 ## How to deploy 
 
 ```sh
