@@ -26,7 +26,7 @@ mirror-from-external:
     - chmod 644 ~/.ssh/known_hosts
     - git config --global user.name "${GIT_USER_NAME}"
     - git config --global user.email "${GIT_USER_EMAIL}"
-    - ssh "git@$GIT_LAB_HOST"
+    - ssh -T git@$GIT_LAB_HOST 2>&1 | grep "successful" || true # Test SSH connection
   script:
     - if [ -z "$DESTINATION_REPOSITORY" ]; then echo "DESTINATION_REPOSITORY is not set"; exit 1; fi
     - echo $SOURCE_REPOSITORY
