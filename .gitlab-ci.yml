@@ -34,7 +34,6 @@ mirror-from-external:
     - git clone --mirror $SOURCE_REPOSITORY $DESTINATION_DIR
     - cd $DESTINATION_DIR
     - git remote remove origin
-    - git remote remove origin
     - git remote add origin "$DESTINATION_REPOSITORY"
     - git push --prune --all
     - git push --prune --tags
