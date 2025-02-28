@@ -34,11 +34,9 @@ mirror-from-external:
     - git clone --mirror $SOURCE_REPOSITORY $DESTINATION_DIR
     - cd $DESTINATION_DIR
     - git remote remove origin
-    - git remote add origin $DESTINATION_REPOSITORY
-    - git fetch origin
-    - git pull
-    - git push --prune --all
-    - git push --prune --tags
+    - git remote remove origin
+    - git remote add origin "$DESTINATION_REPOSITORY"
+    - git push origin --mirror || { echo "Error: git push --mirror failed"; exit 1; }
   only:
     - branches
 
